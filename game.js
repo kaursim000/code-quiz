@@ -13,13 +13,13 @@ let availableQuestions = []
 
 let questions = [
     {
-        question: "Commonly used data types DO NOT include",
+        question: 'Commonly used data types DO NOT include',
 
         choice1: "strings",
         choice2: "booleans",
         choice3: "alerts",
-        4: "numbers",
-        correctAnswer: "3",
+        choice4: "numbers",
+        correctAnswer: 3,
     },
     {
         question: "The condition in an if/else statement is enclosed with: ",
@@ -28,7 +28,7 @@ let questions = [
         choice2: "curly brackets",
         choice3: "parentheses",
         choice4: "square brackets",
-        answer: "3",
+        answer: 3,
     },
     {
         question: "String values must be enclosed within ______ when being assigned to variables.",
@@ -37,7 +37,7 @@ let questions = [
         choice2: "curly brackets",
         choice3: "quotes",
         choice4: "parentheses",
-        answer: "3",
+        answer: 3,
     },
     {
         question: "Arrays in JavaScript can be used to store: ",
@@ -46,7 +46,7 @@ let questions = [
         choice2: "other arrays",
         choice3: "booleans",
         choice4: "all of the above",
-        answer: "4",
+        answer: 4,
     },
     {
         question: "A very usefil tool used during development and debugging for printing content to the debugger is:",
@@ -55,7 +55,7 @@ let questions = [
         choice2: "terminal/bash",
         choice3: "for loops",
         choice4: "console log",
-        answer: "4",
+        answer: 4,
     }
 ]
 
@@ -103,9 +103,9 @@ choices.forEach(choice => {
 
         let classToApply = selectedAnswer == currentQuestion.answer ? 'corect' : 'incorrect'
 
-        if(classToApply === 'incorrect') {
-            decrementScore(SC0RE_POINTS)
-        }
+        // if(classToApply === 'incorrect') {
+        //     incrementScore(SC0RE_POINTS)
+        // }
 
         selectedChoice.parentElement.classList.add(classToApply)
 
@@ -131,3 +131,5 @@ gameOverEl.addEventListener('click', function () {
     console.log("clicked")
     console.log
 })
+
+startGame; 
