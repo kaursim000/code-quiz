@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,17 +8,33 @@
     <title>Quiz!</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <header>
+    <!-- <header>
         <button type="button">View Highscores</button>
-        <div id="timer"></div>
-        
+        <div id="timer">Timer: </div>
+
     </header>
-    <div>
+    <div class="startQuiz">
         <h1>Coding Quiz Challenge</h1>
-        <p>Try to answer the following code-related questions within the time <br> limit. Keep in mind that incorrct answers will penalize your score/time <br> by ten seconds!</p>
-        <button type="button">Start Quiz</button>
+        <p>Try to answer the following code-related questions within the time <br> limit. Keep in mind that incorrct
+            answers will penalize your score/time <br> by ten seconds!</p>
+        <button id="start" type="button">Start Quiz</button>
+    </div> -->
+
+    <div class="container">
+        <!-- <div id="timer">Timer: </div> -->
+        <div id="home" class="flex-column flex-center">
+            <h1>Coding Quiz Challenge</h1>
+            <h2>Try to answer the following code-related questions within the time limit. Keep in mind that incorrct
+            answers will penalize your score/time by ten seconds!</h2>
+            <a href="/game.html" class="btn">Play</a>
+            <a href="/highscore.html" id =" highscore-btn" class="btn">High Scores</a>
+
+        </div>
     </div>
+
     <script src="script.js"></script>
 </body>
+
 </html>
