@@ -49,7 +49,7 @@ let questions = [
         answer: 4,
     },
     {
-        question: "A very usefil tool used during development and debugging for printing content to the debugger is:",
+        question: "A very useful tool used during development and debugging for printing content to the debugger is:",
 
         choice1: "JavaScript",
         choice2: "terminal/bash",
@@ -75,7 +75,7 @@ getNewQuestion = () => {
         return window.location.assign('/end.html')
     }
     questionCounter++
-    progressText.innerText = `Question ${questionCounter} of ${MAX_QUESTIONS}`
+    // progressText.innerText = `Question ${questionCounter} of ${MAX_QUESTIONS}`
 
     const questionsIndex = Math.floor(Math.random()* availableQuestions.length)
     currentQuestion = availableQuestions[questionsIndex]
@@ -86,7 +86,7 @@ getNewQuestion = () => {
         choice.innerText = currentQuestion['choice' + number]
     })
 
-    availableQuestions.splice[questionsIndex, 1]
+    availableQuestions.splice(questionsIndex, 1)
 
     acceptingAnswers = true
 
@@ -101,20 +101,25 @@ choices.forEach(choice => {
         const selectedChoice = e.target 
         const selectedAnswer = selectedChoice.dataset['number']
 
-        let classToApply = selectedAnswer == currentQuestion.answer ? 'corect' : 'incorrect'
+        let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect'
 
-        // if(classToApply === 'incorrect') {
-        //     incrementScore(SC0RE_POINTS)
-        // }
+        if(classToApply === 'incorrect') {
+            timer -=10
+        }
 
         selectedChoice.parentElement.classList.add(classToApply)
 
         setTimeout(() => {
             selectedChoice.parentElement.classList.remove(classToApply)
-            getNewQuestion
+            getNewQuestion()
         }, 1000)
     })
 })
+
+// incrementScore = num => {
+// score -= num
+// timerText.innerText = score
+// }
 
 function setTime() {
     var timerInterval = setInterval(function () {
@@ -132,4 +137,4 @@ gameOverEl.addEventListener('click', function () {
     console.log
 })
 
-startGame; 
+startGame(); 
