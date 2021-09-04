@@ -59,6 +59,9 @@ let questions = [
     }
 ]
 
+var show = function (getNewQuestion) {
+    getNewQuestion.style.display = 'block';
+};
 const SC0RE_POINTS = 10
 const MAX_QUESTIONS = 5
 
@@ -69,10 +72,13 @@ startGame = () => {
     getNewQuestion()
 }
 
+
+
+
 getNewQuestion = () => {
-    if (availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
-        localStorage.setItem('mostRecentScore', score)
-        return window.location.assign('/end.html')
+    if (availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS || timer===0) {
+        localStorage.setItem('mostRecentScore', timer)
+        return window.location.assign('./end.html')
     }
     questionCounter++
     // progressText.innerText = `Question ${questionCounter} of ${MAX_QUESTIONS}`
@@ -133,8 +139,17 @@ function setTime() {
 }
 gameOverEl.addEventListener('click', function () {
     setTime();
+    startGame(); 
     console.log("clicked")
     console.log
 })
 
-startGame(); 
+
+// Hide an element
+var hide = function (getNewQuestion) {
+    getNewQuestion.style.display = 'none';
+};
+
+hide(getNewQuestion);
+
+show(getNewQuestion);
